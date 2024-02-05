@@ -22,7 +22,16 @@ cv2.createTrackbar("VALUE Min","HSV",0,255,empty)
 cv2.createTrackbar("VALUE Max","HSV",255,255,empty)
 
 while True:
-    ret, frame = cap.read()
+   _, img = cap.read()
+    imgHsv = cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
+
+    h_min = cv2.getTrackbarPos("HUE Min","HSV")
+    h_max = cv2.getTrackbarPos("HUE Max", "HSV")
+    s_min = cv2.getTrackbarPos("SAT Min", "HSV")
+    s_max = cv2.getTrackbarPos("SAT Max", "HSV")
+    v_min = cv2.getTrackbarPos("VALUE Min", "HSV")
+    v_max = cv2.getTrackbarPos("VALUE Max", "HSV")
+    print(h_min)
 
     cv2.imshow('frame', frame)
 
