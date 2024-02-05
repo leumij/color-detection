@@ -12,6 +12,15 @@ cap.set(4, frameHeight)
 def empty(a):
     pass
 
+cv2.namedWindow("HSV")
+cv2.resizeWindow("HSV",640,240)
+cv2.createTrackbar("HUE Min","HSV",0,179,empty)
+cv2.createTrackbar("HUE Max","HSV",179,179,empty)
+cv2.createTrackbar("SAT Min","HSV",0,255,empty)
+cv2.createTrackbar("SAT Max","HSV",255,255,empty)
+cv2.createTrackbar("VALUE Min","HSV",0,255,empty)
+cv2.createTrackbar("VALUE Max","HSV",255,255,empty)
+
 while True:
     ret, frame = cap.read()
 
